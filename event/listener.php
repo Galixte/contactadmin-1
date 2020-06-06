@@ -46,6 +46,8 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
+			'core.acp_extensions_run_action_before'	=> 'enable_default_contact',
+			'core.adm_page_footer'	=> 'extension_enabled',
 			'core.page_header_after'	=> 'page_header_after',
 			'core.user_setup'			=> 'user_setup',
 			'core.login_box_failed'		=> 'login_box_failed',
@@ -53,12 +55,43 @@ class listener implements EventSubscriberInterface
 		);
 	}
 
+	// enable the default phpbb contact page upon disabling the extension
+	public function enable_default_contact($event)
+	{
+		$action = $event['action'];
+		$ext_name = $event['ext_name'];
+
+		if ($action = 'disable' && $ext_name = 'rmcgirr83/contactadmin')
+		{
+			$this->config->set('contact_admin_form_enable', true);
+		}
+	}
+
+	// change the display of information on the default contact page of phpBB within the ACP
+	public function extension_enabled($event)
+	{
+		if ($this->config['contactadmin_enable'])
+		{
+			$this->user->add_lang_ext('rmcgirr83/contactadmin', 'acp_contact');
+			$this->template->assign_vars(array(
+				'L_CONTACT_US_ENABLE_EXPLAIN'	=> $this->user->lang['CONTACT_EXTENSION_ACTIVE'],
+			));
+		}
+	}
+
 	public function user_setup($event)
 	{
 		$url = $this->helper->get_current_url();
+
 		if ($this->config['contactadmin_enable'] && empty($this->user->data['is_bot']) && $this->config['board_disable'] && substr($url, strrpos($url, '/') + 1) === 'contactadmin')
 		{
 			define('SKIP_CHECK_DISABLED', true);
+		}
+
+		// if the extension is enabled ensure the default phpBB contact page is disabled.
+		if ($this->config['contactadmin_enable'] && $this->config['contact_admin_form_enable'])
+		{
+			$this->config->set('contact_admin_form_enable', 0);
 		}
 	}
 
@@ -91,9 +124,8 @@ class listener implements EventSubscriberInterface
 	{
 		if ($this->config['contactadmin_enable'])
 		{
-			$this->user->add_lang_ext('rmcgirr83/contactadmin', 'contact');
 			$this->template->assign_vars(array(
-				'L_CONFIRM_EXPLAIN' => sprintf($this->user->lang['CONTACTADMIN_CONFIRM_EXPLAIN'], '<a href="' . $this->helper->route('rmcgirr83_contactadmin_displayform') . '">', '</a>'),
+				'L_CONFIRM_EXPLAIN' => sprintf($this->user->lang['CONFIRM_EXPLAIN'], '<a href="' . $this->helper->route('rmcgirr83_contactadmin_displayform') . '">', '</a>'),
 			));
 		}
 	}
