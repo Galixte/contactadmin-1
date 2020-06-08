@@ -41,11 +41,10 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_CAT_CONTACTADMIN'		=> 'Formulaire de contact du forum',
 	'ADD_ATTACHMENT_EXPLAIN'	=> 'Pour joindre un fichier saisir les informations demandées ci-dessous.',
-	'CONTACT_BOT_ERROR'			=> 'Actuellement, il n’est pas possible d’utiliser le formulaire de contact car une erreur est présente dans la configuration de ce dernier. Un e-mail a été envoyé à l’administrateur fondateur du forum.',
-	'CONTACT_BOT_NONE'			=> 'L’utilisateur %1$s a essayé d’utiliser le formulaire de contact à %2$s pour envoyer un %3$s, mais il n’y a aucun administrateur ayant autorisé %3$ss aux utilisateurs. Merci de corriger la configuration du robot de contact depuis le panneau d’administration concernant le forum %4$s et d’activer l’option « Contacter uniquement les fondateurs du forum ».',
+	'CONTACT_ERROR'				=> 'Actuellement, il n’est pas possible d’utiliser le formulaire de contact car une erreur est présente dans la configuration de ce dernier. Un e-mail a été envoyé à l’administrateur fondateur du forum.',
+	'CONTACT_BOT_NONE'			=> 'L’utilisateur %1$s a essayé d’utiliser le formulaire de contact à %2$s pour envoyer un %3$s, mais il n’y a aucun administrateur ayant autorisé %3$ss aux utilisateurs. Merci de corriger la configuration du robot de contact depuis le panneau d’administration concernant le support %4$s et d’activer l’option « Contacter uniquement les fondateurs du forum ».',
 	'CONTACT_BOT_SUBJECT'		=> 'Erreur de l’extension « Formulaire de contact du forum »',
-	'CONTACT_BOT_USER_MESSAGE'	=> 'L’utilisateur %1$s a essayé d’utiliser le formulaire de contact à %2$s, mais l’utilisateur sélectionné dans la configuration est incorrect. Merci de consulter le forum %3$s et de sélectionner un utilisateur différent depuis le panneau d’administration pour le formulaire de contact.',
-	'CONTACT_BOT_FORUM_MESSAGE'	=> 'L’utilisateur %1$s a essayé d’utiliser le formulaire de contact à %2$s, mais le forum sélectionné dans la configuration est incorrect. Merci de consulter le forum %3$s et de sélectionner un forum différent depuis le panneau d’administration pour le formulaire de contact.',
+	'CONTACT_BOT_MESSAGE'		=> 'L’utilisateur %1$s a essayé d’utiliser le formulaire de contact à %2$s, mais le choix « %3$s » sélectionné dans la configuration est incorrect. Merci de consulter le support %4$s et de sélectionner un choix « %3$s » différent depuis les paramètres de l’extension « Contact admin ».',
 	'CONTACT_CONFIRM'			=> 'Confirmer',
 	'CONTACT_DISABLED'			=> 'Actuellement, il n’est pas possible d’utiliser le formulaire de contact car il est désactivé.',
 	'CONTACT_MAIL_DISABLED'		=> 'Une erreur a été rencontrée avec la configuration du formulaire de contact. L’extension est configurée pour envoyer des e-mails alors que la configuration du forum n’autorise pas l’envoi de ces derniers. Merci de rapporter ce problème %saux responsables du forum%s.',
@@ -64,6 +63,8 @@ $lang = array_merge($lang, array(
 
 	'TOO_MANY_CONTACT_TRIES'	=> 'Le nombre maximal de tentatives de confirmation visuelle a été atteint. Merci d’essayer plus tard.',
 	'CONTACT_NO_NAME'			=> 'Aucun nom n’a été saisi.',
+	'FORUM'						=> 'forum',
+	'USER'						=> 'utilisateur',
 
 	'RETURN_CONTACT'			=> '%sRetourner à la page précédente%s',
 ));

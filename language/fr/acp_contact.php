@@ -73,9 +73,13 @@ $lang = array_merge($lang, array(
 	'CONTACT_METHOD_EMAIL'			=> 'Par e-mail',
 	'CONTACT_METHOD_PM'				=> 'Par message privé',
 	'CONTACT_METHOD_POST'			=> 'Dans un forum',
+	'CONTACT_METHOD_BOARD_DEFAULT'	=> 'Adresse courriel par défaut du forum',
 
 	// Contact posters...user bot
 	'CONTACT_POST_NEITHER'			=> 'Ni l’un ni l’autre',
 	'CONTACT_POST_GUEST'			=> 'Invités uniquement',
 	'CONTACT_POST_ALL'				=> 'Tout le monde',
+
+	// Overwrite the default contact page lang
+	'CONTACT_EXTENSION_ACTIVE'	=> '<span style="color:red;">Les paramètres ici n’auront pas d’importance tant que l’extension « Contact admin » demeurera activée. Il n’est pas possible d’activer le formulaire de contact par défaut du forum sans avoir préalablement désactivé l’extension « Contact admin ».</span>',
 ));
