@@ -2,7 +2,7 @@
 /**
  *
  * Contact Admin. An extension for the phpBB Forum Software package.
- * French translation by Galixte (http://www.galixte.com)
+ * French translation by Galixte (https://www.galixte.com)
  *
  * @copyright (c) 2018 Rich McGirr (RMcGirr83)
  * @license GNU General Public License, version 2 (GPL-2.0-only)
@@ -19,7 +19,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -38,10 +38,12 @@ if (empty($lang) || !is_array($lang))
 // ’ « » “ ” …
 //
 
-$lang = array_merge($lang, array(
+$lang = array_merge($lang, [
+	'ADMINS_NOT_EXIST_FOR_METHOD'	=> [
+		0 => 'Aucun administrateur n’autorise la réception d’e-mails à son intention. Une autre méthode de contact doit être sélectionnée.',
+		2 => 'Aucun administrateur n’autorise la réception de messages privés à son intention. Une autre méthode de contact doit être sélectionnée.',
+	],
 	'CONTACT_CONFIG_SAVED'			=> 'Les paramètres de l’extension « Formulaire de contact du forum » ont été sauvegardés.',
-	'CONTACT_ENABLE'				=> 'Activer l’extension « Formulaire de contact du forum »',
-	'CONTACT_ENABLE_EXPLAIN'		=> 'Permet d’activer ou de désactiver totalement l’extension « Formulaire de contact du forum ».',
 	'CONTACT_ACP_CONFIRM'				=> 'Activer la confirmation visuelle',
 	'CONTACT_ACP_CONFIRM_EXPLAIN'		=> 'Permet d’activer la confirmation visuelle lorsque les utilisateurs envoient un message.<br>Ceci permet de se prémunir contre les messages indésirables. Information : cette option est uniquement fonctionnelle depuis la page du formulaire de contact et n’affecte en aucun cas toute autre confirmation visuelle configurée sur le forum.',
 	'CONTACT_ATTACHMENTS'				=> 'Autoriser les fichiers joints',
@@ -50,7 +52,7 @@ $lang = array_merge($lang, array(
 	'CONTACT_CONFIRM_GUESTS_EXPLAIN'	=> 'Permet d’afficher la confirmation visuelle uniquement aux invités si celle-ci est au préalable activée.',
 	'CONTACT_FOUNDER'					=> 'Contacter uniquement les fondateurs du forum',
 	'CONTACT_FOUNDER_EXPLAIN'			=> 'Permet d’envoyer uniquement aux administrateurs « Fondateurs » des notifications par e-mail ou par MP (message privé).',
-	'CONTACT_GENERAL_SETTINGS'			=> 'Configuration générale de la page du formulaire de contact',
+
 	'CONTACT_MAX_ATTEMPTS'				=> 'Nombre maximal de tentatives de confirmation visuelle',
 	'CONTACT_MAX_ATTEMPTS_EXPLAIN'		=> 'Permet de saisir le nombre maximal de tentatives de confirmation visuelle qu’un utilisateur peut saisir.<br>Saisir 0 pour un nombre illimité de tentatives.',
 	'CONTACT_METHOD'					=> 'Méthode de contact',
@@ -64,10 +66,11 @@ $lang = array_merge($lang, array(
 	'CONTACT_BOT_POSTER_EXPLAIN'	=> 'Permet de définir dans quelle situation le robot de contact est utilisé. Si la méthode de contact est définie sur « Dans un forum » ou « Par message privé » les messages proviendront du robot de contact suivant le paramètre défini ici. Si le paramètre est défini sur « Ni l’un ni l’autre » le robot de contact n’est pas utilisé. Les messages publiés sur le forum ou par message privé auront pour auteur « Anonymous » (l’utilisateur qui représente tous les invités) et contiendront les informations saisies par l’utilisateur sur la page du formulaire de contact.',
 	'CONTACT_BOT_USER'				=> 'Utilisateur comme robot de contact',
 	'CONTACT_BOT_USER_EXPLAIN'		=> 'Permet de sélectionner l’utilisateur qui est utilisé comme robot de contact pour publier des messages lorsque la méthode de contact est définie sur « Dans un forum » ou « Par message privé ».',
+	'CONTACT_NO_BOT_USER'			=> '<b>L’ID de l’utilisateur utilisé comme robot de contact n’existe pas.</b>',
 	'CONTACT_USERNAME_CHK'			=> 'Vérifier le nom d’utilisateur',
-	'CONTACT_USERNAME_CHK_EXPLAIN'	=> 'Permet d’activer le contrôle du nom d’utilisateur saisi sur la page du formulaire de contact pour les invités, celui-ci sera comparé avec ceux présents dans la base de données. Si un nom similaire est trouvé un message d’erreur sera affiché à l’utilisateur pour lui demander de saisir un autre nom d’utilisateur.',
+	'CONTACT_USERNAME_CHK_EXPLAIN'	=> 'Permet d’activer le contrôle du nom d’utilisateur saisi sur la page du formulaire de contact pour les invités, celui-ci sera comparé avec ceux présents dans la base de données. Si le nom est trouvé alors un message d’erreur sera affiché à l’utilisateur l’invitant à saisir un autre nom d’utilisateur.',
 	'CONTACT_EMAIL_CHK'				=> 'Vérifier l’adresse e-mail',
-	'CONTACT_EMAIL_CHK_EXPLAIN'		=> 'Permet d’activer le contrôle de l’adresse e-mail saisie sur la page du formulaire de contact pour les invités, celle-ci sera comparée avec celles présentes dans la base de données. Si une adresse similaire est trouvée un message d’erreur sera affiché à l’utilisateur pour lui demander de saisir une autre adresse e-mail.',
+	'CONTACT_EMAIL_CHK_EXPLAIN'		=> 'Permet d’activer le contrôle de l’adresse e-mail saisie sur la page du formulaire de contact pour les invités, celle-ci sera comparée avec celles présentes dans la base de données. Si l’adresse est trouvée un message d’erreur sera affiché à l’utilisateur l’invitant à saisir une autre adresse e-mail.',
 
 	// Contact methods
 	'CONTACT_METHOD_EMAIL'			=> 'Par e-mail',
@@ -82,4 +85,7 @@ $lang = array_merge($lang, array(
 
 	// Overwrite the default contact page lang
 	'CONTACT_EXTENSION_ACTIVE'	=> '<span style="color:red;">Les paramètres ici n’auront pas d’importance tant que l’extension « Contact admin » demeurera activée. Il n’est pas possible d’activer le formulaire de contact par défaut du forum sans avoir préalablement désactivé l’extension « Contact admin ».</span>',
-));
+	'CONTACT_GDPR'	=> 'RGPD',
+	'CONTACT_GDPR_EXPLAIN' => 'Permet d’activer l’affichage d’une case à cocher à l’utilisateur afin d’accepter la politique de confidentialité du forum. La case doit être cochée pour envoyer le formulaire de contact.',
+	'EMAIL_NOT_CONFIGURED' => 'Aucune adresse e-mail n’est paramétrée pour le forum, merci de sélectionner une autre méthode de contact.',
+]);

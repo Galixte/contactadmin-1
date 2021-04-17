@@ -2,7 +2,7 @@
 /**
  *
  * Contact Admin. An extension for the phpBB Forum Software package.
- * French translation by Galixte (http://www.galixte.com)
+ * French translation by Galixte (https://www.galixte.com)
  *
  * @copyright (c) 2018 Rich McGirr (RMcGirr83)
  * @license GNU General Public License, version 2 (GPL-2.0-only)
@@ -19,7 +19,7 @@ if (!defined('IN_PHPBB'))
 
 if (empty($lang) || !is_array($lang))
 {
-	$lang = array();
+	$lang = [];
 }
 
 // DEVELOPERS PLEASE NOTE
@@ -38,10 +38,10 @@ if (empty($lang) || !is_array($lang))
 // ’ « » “ ” …
 //
 
-$lang = array_merge($lang, array(
+$lang = array_merge($lang, [
 	// General config options
 	'ACP_CAT_CONTACTADMIN'	=> 'Formulaire de contact du forum',
-	'ACP_CONTACTADMIN_CONFIG'			=> 'Paramètres',
+	'ACP_CONTACTADMIN_CONFIG'	=> 'Paramètres',
 	'FORUM_EMAIL_INACTIVE'	=> 'Il n’est pas possible aux membres de contacter les administrateurs du forum.<br><span style="color:red;">Envoyer des e-mails n’est pas autorisé sur le forum, merci d’activer cette fonctionnalité.</span>.',
 	'NO_FORUM_ATTACHMENTS'		=> 'Il n’est pas possible aux membres de joindre des fichiers pour contacter les administrateurs.<br><span style="color:red;">Joindre des fichiers n’est pas autorisé sur le forum, merci d’activer cette fonctionnalité.</span>',
 	// Log entries
@@ -51,4 +51,11 @@ $lang = array_merge($lang, array(
 	'LOG_CONTACT_EMAIL_INVALID'		=> '<strong>L’extension « Formulaire de contact du forum » est configurée pour envoyer des e-mails alors que le forum n’autorise pas l’envoi de ces derniers. En conséquence de quoi l’extension a été désactivée',
 	'LOG_CONTACT_NONE'				=> '<strong>Aucun administrateur n’a permis aux utilisateurs de les contacter par l’intermédiaire de %1$s depuis le formulaire de contact de l’extension « Formulaire de contact du forum »</strong>',
 	'LOG_CONTACT_CONFIG_UPDATE'		=> '<strong>Paramètres de l’extension « Formulaire de contact du forum » mis à jour</strong>',
-));
+	//Donation
+	'PAYPAL_IMAGE_URL'          => 'https://www.paypalobjects.com/webstatic/en_US/i/btn/png/silver-pill-paypal-26px.png',
+	'PAYPAL_ALT'                => 'Faire un don via PayPal',
+	'BUY_ME_A_BEER_URL'         => 'https://paypal.me/RMcGirr83',
+	'BUY_ME_A_BEER'				=> 'Offrir une boisson à l’auteur de cette extension',
+	'BUY_ME_A_BEER_SHORT'		=> 'Faire une don pour cette extension',
+	'BUY_ME_A_BEER_EXPLAIN'		=> 'Cette extension est entièrement gratuite. Afin d’en faire bénéficier à la communauté phpBB ce projet a nécessité du temps à son auteur. Si cette extension est utile au forum sur lequel elle est installé, merci de considérer de <a href="https://paypal.me/RMcGirr83" target="_blank" rel="noreferrer noopener">faire un don</a>. Ce geste sera grandement apprécié. <i class="fa fa-smile-o" style="color:green;font-size:1.5em;" aria-hidden="true"></i>',
+]);
